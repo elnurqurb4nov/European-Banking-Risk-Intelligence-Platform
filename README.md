@@ -2,9 +2,9 @@
 
 ## Overview
 
-The **European Banking Risk Intelligence Platform** is a data-driven analytical project designed to monitor banking sector risk across selected European countries. It combines bank-level supervisory disclosures, macroeconomic indicators, and selected annual report metrics in order to assess relative bank resilience and construct an initial multi-factor risk ranking.
+The **European Banking Risk Intelligence Platform** is a data-driven analytical project designed to monitor banking sector risk across selected European countries. It combines bank-level supervisory disclosures, macroeconomic indicators, and selected annual report metrics to assess relative bank resilience and construct an initial multi-factor risk ranking.
 
-This project was developed as a portfolio-oriented banking risk analytics case, with a focus on capital strength, macro-financial pressure, and selected asset-quality and profitability indicators.
+This project was developed as a portfolio-oriented banking risk analytics case, with a focus on capital strength, macro-financial pressure, asset quality, and profitability.
 
 ---
 
@@ -104,37 +104,19 @@ Some of the main findings from the current version include:
 
 ---
 
-## Repository Structure
+## How to Run
 
-```text
-European-Banking-Risk-Intelligence-Platform/
-│
-├─ README.md
-├─ .gitignore
-│
-├─ data/
-│  └─ processed/
-│     ├─ final_analysis_dataset_with_roa.csv
-│     ├─ final_upgraded_risk_score.csv
-│     ├─ bank_risk_ranking_final.csv
-│     ├─ cet1_change_analysis.csv
-│     └─ macro_pressure_score_filled.csv
-│
-├─ outputs/
-│  ├─ final_bank_risk_ranking_advanced.png
-│  ├─ cet1_dumbbell_chart.png
-│  ├─ risk_vs_cet1_scatter.png
-│  ├─ macro_pressure_by_country.png
-│  └─ cet1_bank_average.png
-│
-├─ scripts/
-│  ├─ 01_macro_data_collection.py
-│  ├─ 02_bank_panel_build.py
-│  ├─ 03_cet1_analysis.py
-│  ├─ 04_macro_pressure_score.py
-│  ├─ 05_npl_proxy_build.py
-│  ├─ 06_roa_integration.py
-│  └─ 07_final_risk_scoring.py
-│
-└─ docs/
-   └─ project_summary.md
+Clone the repository, install the required packages, and run the scripts in numerical order:
+
+```bash
+git clone https://github.com/elnurqurb4nov/European-Banking-Risk-Intelligence-Platform.git
+cd European-Banking-Risk-Intelligence-Platform
+pip install -r requirements.txt
+
+python scripts/01_macro_data_collection.py
+python scripts/02_bank_panel_build.py
+python scripts/03_cet1_analysis.py
+python scripts/04_macro_pressure_score.py
+python scripts/05_npl_proxy_build.py
+python scripts/06_roa_integration.py
+python scripts/07_final_risk_scoring.py
