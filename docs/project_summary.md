@@ -93,3 +93,4 @@ Main limitations:
 - Add liquidity indicators such as LCR
 - Build a Power BI dashboard
 - Extend the model toward a more complete banking risk monitoring platform
+
