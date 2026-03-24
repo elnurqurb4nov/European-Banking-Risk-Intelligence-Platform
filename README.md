@@ -24,6 +24,18 @@ The project goes beyond simple capital ratio comparison by combining four distin
 
 ## Outputs
 
+### Interactive dashboard
+
+The project includes a fully interactive **Power BI dashboard** for exploring risk scores, CET1 comparisons, and macro pressure across banks and countries.
+
+📊 **File:** [`outputs/European Banking Risk Intelligence Dashboard.pbix`](outputs/European%20Banking%20Risk%20Intelligence%20Dashboard.pbix)
+
+> Open with [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free).
+
+---
+
+### Static charts
+
 ### Final bank risk ranking
 ![Final Bank Risk Ranking](outputs/final_bank_risk_ranking_advanced.png)
 
@@ -76,7 +88,7 @@ The project covers **10 banks** across **6 countries**:
 
 ## Methodology
 
-The project was built in 8 sequential stages:
+The project was built in 7 sequential stages:
 
 ```
 Stage 1  →  Macroeconomic data collection (World Bank API)
@@ -86,7 +98,6 @@ Stage 4  →  Country-level macro pressure score construction
 Stage 5  →  NPL proxy identification and integration
 Stage 6  →  ROA extraction from annual reports
 Stage 7  →  Final composite risk scoring and bank ranking
-Stage 8  →  Sensitivity analysis across weight combinations
 ```
 
 ### Composite risk score
@@ -134,6 +145,7 @@ European-Banking-Risk-Intelligence-Platform/
 │   └── 07_final_risk_scoring.py
 │
 ├── outputs/
+│   ├── European Banking Risk Intelligence Dashboard.pbix
 │   ├── final_bank_risk_ranking_advanced.png
 │   ├── cet1_dumbbell_chart.png
 │   ├── risk_vs_cet1_scatter.png
@@ -166,7 +178,7 @@ python scripts/06_roa_integration.py
 python scripts/07_final_risk_scoring.py
 ```
 
-> Each script saves its outputs to `data/processed/`. Final charts are saved to `outputs/`.
+> Each script saves its outputs to `data/processed/`. Final charts are saved to `outputs/`. The Power BI dashboard reads from the processed CSV files.
 
 ---
 
@@ -197,7 +209,6 @@ openpyxl==3.1.2
 
 - Expand the sample to all EBA-covered institutions
 - Add stress testing scenarios (adverse macro shock simulation)
-- Build an interactive Streamlit dashboard for live exploration
 - Apply PCA or regression-based weight calibration
 - Incorporate ECB supervisory data for additional bank-level indicators
 
